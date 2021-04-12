@@ -3,11 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var defaultRouter = require('./routes/default');
 var instituteRouter = require('./routes/institute');
 
 var app = express();
+
+mongoose.connect(
+	'mongodb://127.0.0.1:27017/quizit',
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	},
+	() => {
+		console.log('Connected to db successfully!');
+	}
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

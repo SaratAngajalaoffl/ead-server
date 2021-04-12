@@ -1,1 +1,11 @@
 GET http://localhost:3000/institute/
+
+###########
+
+POST http://localhost:3000/institute/
+Content-Type: application/json
+
+{
+    "name":"Stanford",
+    "password":"password"
+}
