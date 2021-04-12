@@ -6,6 +6,17 @@ POST http://localhost:3000/institute/
 Content-Type: application/json
 
 {
-    "name":"Stanford",
+    "name":"Stanford3.0",
     "password":"password"
 }
+
+#########
+
+POST http://localhost:3000/institute/login
+Content-Type: application/json
+
+{
+    "name":"Stanford3.0",
+    "password":"password"
+}
+
