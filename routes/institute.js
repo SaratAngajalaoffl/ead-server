@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const { checkAuth } = require('../utils/auth_functions');
 const InstituteModel = require('../models/institute');
 const StudentModel = require('../models/student');
+const TeacherModel = require('../models/teacher');
 
 const Router = express.Router();
 
@@ -14,15 +15,13 @@ Router.get('/', checkAuth, async (req, res, next) => {
 	res.send(query);
 });
 
-// Router.post('/test', checkAuth, (req, res, next) => {
-// 	if (!req.user) res.status(401).send(new Error('Not Authorised'));
-// 	res.status(200).send({ user: req.user });
-// });
-
 Router.get('/students', checkAuth, async (req, res, next) => {
 	const query = await InstituteModel.findOne({ _id: req.user._id }).populate(
 		'students'
 	);
+
+	if (!query.students || query.students.length === 0)
+		res.status(404).send('No students found');
 
 	res.status(200);
 	res.setHeader('Content-Type', 'application/json');
@@ -41,6 +40,39 @@ Router.post('/add-student', checkAuth, (req, res, next) => {
 				name: req.user.name,
 			});
 			query.students.push(newit._id);
+			query.save((err) => {
+				res.status(201);
+				res.setHeader('Content-Type', 'application/json');
+				res.send(newit);
+			});
+		}
+	});
+});
+
+Router.get('/teachers', checkAuth, async (req, res, next) => {
+	const query = await InstituteModel.findOne({ _id: req.user._id }).populate(
+		'teachers'
+	);
+
+	if (!query.teachers || query.teachers.length === 0)
+		res.status(404).send('No teachers found');
+
+	res.status(200);
+	res.setHeader('Content-Type', 'application/json');
+	res.send(query.teachers);
+});
+
+Router.post('/add-teacher', checkAuth, (req, res, next) => {
+	if (!req.user) res.status(401).send(new Error('Not Authorised'));
+	const { email } = req.body;
+	const doc = new TeacherModel({ email });
+	doc.save(async (err, newit) => {
+		if (err) next(err);
+		else {
+			const query = await InstituteModel.findOne({
+				name: req.user.name,
+			});
+			query.teachers.push(newit._id);
 			query.save((err) => {
 				res.status(201);
 				res.setHeader('Content-Type', 'application/json');

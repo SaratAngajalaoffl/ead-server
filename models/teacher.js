@@ -3,9 +3,14 @@ const mongoose = require('mongoose');
 const TeacherSchema = new mongoose.Schema({
 	email: {
 		type: String,
-		required: [true, 'Teacher should have a email!'],
+		trim: true,
+		lowercase: true,
 		unique: true,
-		min: [6, 'Size of name less than 6!'],
+		required: 'Email address is required',
+		match: [
+			/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+			'Please fill a valid email address',
+		],
 	},
 });
 
