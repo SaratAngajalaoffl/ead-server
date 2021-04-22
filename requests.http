@@ -1,4 +1,5 @@
 GET http://localhost:3000/institute/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
 
 ###########
 
@@ -6,7 +7,7 @@ POST http://localhost:3000/institute/
 Content-Type: application/json
 
 {
-    "name":"Stanford3.0",
+    "name":"Stanford",
     "password":"password"
 }
 
@@ -16,16 +17,26 @@ POST http://localhost:3000/institute/login
 Content-Type: application/json
 
 {
-    "name":"Stanford3.0",
+    "name":"Stanford",
     "password":"password"
 }
 
 #########
 
 POST http://localhost:3000/institute/add-student
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
 Content-Type: application/json
 
 {
     "email":"saratangajala@gmail.com"
 }
 
+###########
+
+POST http://localhost:3000/institute/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+
+
+###########
+GET http://localhost:3000/institute/students
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI

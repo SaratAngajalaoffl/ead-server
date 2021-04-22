@@ -1,17 +1,28 @@
+// imports
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
+var passport = require('passport');
 var defaultRouter = require('./routes/default');
 var instituteRouter = require('./routes/institute');
 
+// Initialise the app
 var app = express();
 
+// Setting up Middleware
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+
+// Connecting to MongoDB
 mongoose.connect(
-	'mongodb://127.0.0.1:27017/quizit',
+	process.env.MONGOURL,
 	{
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -22,16 +33,9 @@ mongoose.connect(
 	}
 );
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// console.log(process.env);
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+// Setting up Core Routers
 app.use('/', defaultRouter);
 app.use('/institute', instituteRouter);
 
