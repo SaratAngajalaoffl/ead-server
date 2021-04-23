@@ -1,7 +1,14 @@
+var passport = require('passport');
 var JwtStrategy = require('passport-jwt').Strategy,
 	ExtractJWT = require('passport-jwt').ExtractJwt;
-var passport = require('passport');
+var TokenStrategy = require('passport-accesstoken').Strategy;
 const InstituteModel = require('../models/institute');
+const StudentModel = require('../models/student');
+const TeacherModel = require('../models/teacher');
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client(
+	'893848214605-ijqsaquhds154urtb9ib4ndebsq6bu1p.apps.googleusercontent.com'
+);
 
 passport.use(
 	new JwtStrategy(
@@ -26,6 +33,40 @@ passport.use(
 			);
 		}
 	)
+);
+
+passport.use(
+	new TokenStrategy(function (token, done) {
+		client
+			.verifyIdToken({
+				idToken: token,
+				// audience:
+				// 	'893848214605-ijqsaquhds154urtb9ib4ndebsq6bu1p.apps.googleusercontent.com',
+			})
+			.then(async (response) => {
+				const { email_verified, email } = response.payload;
+
+				let res = await StudentModel.findOne({ email: email });
+				if (!res) {
+					res = await TeacherModel.findOne({ email: email });
+				} else {
+					res.type = 'student';
+				}
+
+				if (email_verified) {
+					if (res) {
+						return done(null, res);
+					} else {
+						return done('User not found', null);
+					}
+				} else {
+					done('Email not verified', null);
+				}
+			})
+			.catch((err) => {
+				done(err, null);
+			});
+	})
 );
 
 module.exports = { passport };

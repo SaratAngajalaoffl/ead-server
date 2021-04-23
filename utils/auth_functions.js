@@ -2,4 +2,6 @@ var { passport } = require('./authentication');
 
 const checkAuth = passport.authenticate('jwt', { session: false });
 
-module.exports = { checkAuth };
+const studentauth = passport.authenticate('token', { session: false });
+
+module.exports = { checkAuth, studentauth };

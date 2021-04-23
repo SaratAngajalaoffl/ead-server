@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var defaultRouter = require('./routes/default');
 var instituteRouter = require('./routes/institute');
+var studentRouter = require('./routes/student');
 
 // Initialise the app
 var app = express();
@@ -39,6 +40,7 @@ mongoose.connect(
 // Setting up Core Routers
 app.use('/', defaultRouter);
 app.use('/institute', instituteRouter);
+app.use('/student', studentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

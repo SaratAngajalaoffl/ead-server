@@ -28,7 +28,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0Y
 Content-Type: application/json
 
 {
-    "email":"saratangajala@gmail.com",
+    "email":"saratchandra.a18@iiits.in",
     "name" :"Sarat Angajala"
 }
 
@@ -49,8 +49,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0Y
 Content-Type: application/json
 
 {
-    "email":"saratteacher@gmail.com",
-    "name": "Sarat Angajala"
+    "email":"saratchandra.a18@iiits.in",
+    "name" :"Sarat Angajala"
 }
 
 ###########
@@ -70,3 +70,7 @@ Content-Type: application/json
 ###########
 GET http://localhost:3000/institute/courses
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
+
+#####################
+POST http://localhost:3000/login
+x-token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlOTU1NmFkNDY4MDMxMmMxMTdhZmFlZjI5MjBmNWY5OWE0Yzc5ZmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MDc0MDg3MTgxOTIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDA5NzE4ODA5MTA1ODM5ODY5NjYiLCJoZCI6ImlpaXRzLmluIiwiZW1haWwiOiJzYXJhdGNoYW5kcmEuYTE4QGlpaXRzLmluIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiIzcDd5QXJnRmFiZlZOTVFLWFk3azVnIiwiaWF0IjoxNjE5MTc2NzEyLCJleHAiOjE2MTkxODAzMTJ9.g7MmAyB4dfAF88I6i2sHsM2o7uH2sDGN_oDIGcCB1-KIzq_SGWL000URLHciJT6fHqTKz7eGnPNQfc9fCPTw_dCECjDx3pYAaVMH4S7tvq4rnUp8K84tdYwFEQEF1nzG29HBt_XGD--EmvbE1Fkui1vraoWqzbSScLA8AYeasAbHVeL49Y3NhfiF4-8C0TtlpRpkf91C45mWm_LMHbKRAADeRmuJR-ouVILwG8uxRRhza4zr7Wgpzm3uEMH0B_LAYjZcVUn-tuiJy2BIbzZ1HEsCCkYKOA0bViyld6kpKYt_tLvTzOxAQa5wpUQdoLQjQvD7tyeSC8fgbc0pUv8ceQ
