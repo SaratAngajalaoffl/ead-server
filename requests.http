@@ -1,9 +1,9 @@
 GET http://localhost:3000/institute/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
 
 ###########
 
-POST http://localhost:3000/institute/
+POST http://localhost:3000/institute/register
 Content-Type: application/json
 
 {
@@ -24,33 +24,49 @@ Content-Type: application/json
 #########
 
 POST http://localhost:3000/institute/add-student
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
 Content-Type: application/json
 
 {
-    "email":"saratangajala@gmail.com"
+    "email":"saratangajala@gmail.com",
+    "name" :"Sarat Angajala"
 }
 
 ###########
 
 POST http://localhost:3000/institute/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
 
 
 ###########
 GET http://localhost:3000/institute/students
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
 
 ###################
 
 POST http://localhost:3000/institute/add-teacher
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
 Content-Type: application/json
 
 {
-    "email":"saratteacher@gmail.com"
+    "email":"saratteacher@gmail.com",
+    "name": "Sarat Angajala"
 }
 
 ###########
 GET http://localhost:3000/institute/teachers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkwODY1MTJ9.3vjH8GZSeNkoThJ0esCPbsf3owwTAu2FmXXAwJJQ1qI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
+
+###################
+
+POST http://localhost:3000/institute/add-course
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
+Content-Type: application/json
+
+{
+    "name": "Chem101"
+}
+
+###########
+GET http://localhost:3000/institute/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN0YW5mb3JkIiwidGVhY2hlcnMiOltdLCJzdHVkZW50cyI6W10sImNvdXJzZXMiOltdLCJpYXQiOjE2MTkxNjU5NDN9.sNEm6GB1xw7R8X6i-TunKKqIly6d-ZZsTUebXEDujbI
