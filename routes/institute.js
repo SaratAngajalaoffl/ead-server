@@ -36,7 +36,6 @@ Router.post('/login', async (req, res, next) => {
 	const query = await InstituteModel.findOne({ name });
 
 	if (bcrypt.compareSync(password, query.password)) {
-		
 		const user = {
 			username: query.name,
 			teachers: query.teachers,
