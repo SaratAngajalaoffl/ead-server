@@ -7,7 +7,7 @@ const QuestionSchema = new mongoose.Schema({
 		required: 'Quiz Title must be set!',
 	},
 	options: [{ type: String }],
-	correct_options: [{ type: string }],
+	correct_options: { type: String },
 });
 
 const QuestionModel = mongoose.model('Question', QuestionSchema);

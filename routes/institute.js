@@ -47,7 +47,7 @@ Router.post('/login', async (req, res, next) => {
 
 		res.status(200)
 			.setHeader('Content-Type', 'application/json')
-			.send({ token });
+			.send({ token, name: user.username });
 	}
 });
 

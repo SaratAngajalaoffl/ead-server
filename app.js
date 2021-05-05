@@ -9,11 +9,14 @@ var passport = require('passport');
 var defaultRouter = require('./routes/default');
 var instituteRouter = require('./routes/institute');
 var studentRouter = require('./routes/student');
-
+var courseRouter = require('./routes/course');
+var quizRouter = require('./routes/quiz');
+var cors = require('cors');
 // Initialise the app
 var app = express();
 
 // Setting up Middleware
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,6 +44,8 @@ mongoose.connect(
 app.use('/', defaultRouter);
 app.use('/institute', instituteRouter);
 app.use('/student', studentRouter);
+app.use('/courses', courseRouter);
+app.use('/quiz', quizRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

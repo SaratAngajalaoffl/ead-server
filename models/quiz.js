@@ -9,8 +9,6 @@ const QuizSchema = new mongoose.Schema({
 	},
 	questions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Question' }],
 	totalmarks: { type: Number, required: 'Total marks must be given' },
-	start_time: { type: String, required: 'Start time must be Specified!' },
-	end_time: { type: String, required: 'End time must be Specified!' },
 });
 
 const QuizModel = mongoose.model('Quiz', QuizSchema);
